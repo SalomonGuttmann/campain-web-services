@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="https://soap.restfulwebservices.webservices.rest.com">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getCampainRequest>
+            <gs:name>Salomon</gs:name>
+        </gs:getCampainRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+

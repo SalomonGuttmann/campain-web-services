@@ -1,0 +1,48 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://soap.restfulwebservices.webservices.rest.com"
+           targetNamespace="https://soap.restfulwebservices.webservices.rest.com" elementFormDefault="qualified">
+
+
+    <xs:element name="getCampainRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCampainResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="campain" type="tns:campain"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="campain">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="profilierungssortiment" type="xs:string"/>
+            <xs:element name="kundengruppe" type="xs:string"/>
+            <xs:element name="label" type="xs:string"/>
+            <xs:element name="marke" type="xs:string"/>
+            <xs:element name="industrie" type="xs:string"/>
+            <xs:element name="organisation" type="xs:string"/>
+            <xs:element name="gM" type="xs:string"/>
+            <xs:element name="update" type="xs:string"/>
+            <xs:element name="planumsatz" type="xs:string"/>
+            <xs:element name="projektleiter" type="xs:string"/>
+            <xs:element name="erfassergruppe" type="xs:string"/>
+            <xs:element name="bezeichnungsprache" type="xs:string"/>
+            <xs:element name="bezeichnung" type="xs:string"/>
+            <xs:element name="kampagnesprache" type="xs:string"/>
+            <xs:element name="kampagnename" type="xs:string"/>
+            <xs:element name="mABEOnly" type="xs:string"/>
+            <xs:element name="ende" type="xs:string"/>
+            <xs:element name="start" type="xs:string"/>
+            <xs:element name="kampagnentyp" type="xs:string"/>
+            <xs:element name="ext_kampagnenid" type="xs:string"/>
+            <xs:element name="transaktionsID" type="xs:string"/>
+            <xs:element name="quell_system" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
