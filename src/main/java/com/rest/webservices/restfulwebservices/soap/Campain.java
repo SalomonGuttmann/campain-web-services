@@ -7,6 +7,8 @@
 
 package com.rest.webservices.restfulwebservices.soap;
 
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -24,28 +26,118 @@ import jakarta.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="profilierungssortiment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="kundengruppe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="label" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="marke" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="industrie" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="organisation" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="gM" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="update" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="planumsatz" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="projektleiter" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="erfassergruppe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="bezeichnungsprache" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="bezeichnung" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="kampagnesprache" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="kampagnename" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="mABEOnly" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="ende" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="kampagnentyp" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="ext_kampagnenid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="transaktionsID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="quell_system" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="QuellSystem" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
+ *         &lt;element name="TransaktionsID" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
+ *         &lt;element name="ExtKampagnenid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Kampagnentyp" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Start" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Ende" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="MABEOnly" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
+ *         &lt;element name="KampagneName"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Bezeichnung" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="Sprache" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Beschreibung"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Bezeichnung" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="Sprache" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Erfassergruppe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Projektleiter" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Planumsatz" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Update" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
+ *         &lt;element name="Zuordnungsbereiche"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="GM" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Organisationen"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Organisation" type="{http://www.w3.org/2001/XMLSchema}byte" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Industrien"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Industrie" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Marken"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Marke" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Label"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Label" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Kundengruppen"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Kundengruppe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Profilierungssortimente"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Profilierungssortiment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -57,76 +149,70 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "campain", propOrder = {
     "id",
-    "profilierungssortiment",
-    "kundengruppe",
-    "label",
-    "marke",
-    "industrie",
-    "organisation",
-    "gm",
-    "update",
-    "planumsatz",
-    "projektleiter",
-    "erfassergruppe",
-    "bezeichnungsprache",
-    "bezeichnung",
-    "kampagnesprache",
-    "kampagnename",
-    "mabeOnly",
-    "ende",
-    "start",
-    "kampagnentyp",
-    "extKampagnenid",
+    "quellSystem",
     "transaktionsID",
-    "quellSystem"
+    "extKampagnenid",
+    "kampagnentyp",
+    "start",
+    "ende",
+    "mabeOnly",
+    "kampagneName",
+    "beschreibung",
+    "erfassergruppe",
+    "projektleiter",
+    "planumsatz",
+    "update",
+    "zuordnungsbereiche",
+    "organisationen",
+    "industrien",
+    "marken",
+    "label",
+    "kundengruppen",
+    "profilierungssortimente"
 })
 public class Campain {
 
     protected int id;
-    @XmlElement(required = true)
-    protected String profilierungssortiment;
-    @XmlElement(required = true)
-    protected String kundengruppe;
-    @XmlElement(required = true)
-    protected String label;
-    @XmlElement(required = true)
-    protected String marke;
-    @XmlElement(required = true)
-    protected String industrie;
-    @XmlElement(required = true)
-    protected String organisation;
-    @XmlElement(name = "gM", required = true)
-    protected String gm;
-    @XmlElement(required = true)
-    protected String update;
-    @XmlElement(required = true)
-    protected String planumsatz;
-    @XmlElement(required = true)
-    protected String projektleiter;
-    @XmlElement(required = true)
-    protected String erfassergruppe;
-    @XmlElement(required = true)
-    protected String bezeichnungsprache;
-    @XmlElement(required = true)
-    protected String bezeichnung;
-    @XmlElement(required = true)
-    protected String kampagnesprache;
-    @XmlElement(required = true)
-    protected String kampagnename;
-    @XmlElement(name = "mABEOnly", required = true)
-    protected String mabeOnly;
-    @XmlElement(required = true)
-    protected String ende;
-    @XmlElement(required = true)
-    protected String start;
-    @XmlElement(required = true)
-    protected String kampagnentyp;
-    @XmlElement(name = "ext_kampagnenid", required = true)
+    @XmlElement(name = "QuellSystem")
+    protected byte quellSystem;
+    @XmlElement(name = "TransaktionsID")
+    protected byte transaktionsID;
+    @XmlElement(name = "ExtKampagnenid", required = true)
     protected String extKampagnenid;
-    @XmlElement(required = true)
-    protected String transaktionsID;
-    @XmlElement(name = "quell_system", required = true)
-    protected String quellSystem;
+    @XmlElement(name = "Kampagnentyp", required = true)
+    protected String kampagnentyp;
+    @XmlElement(name = "Start")
+    protected int start;
+    @XmlElement(name = "Ende")
+    protected int ende;
+    @XmlElement(name = "MABEOnly")
+    protected byte mabeOnly;
+    @XmlElement(name = "KampagneName", required = true)
+    protected Campain.KampagneName kampagneName;
+    @XmlElement(name = "Beschreibung", required = true)
+    protected Campain.Beschreibung beschreibung;
+    @XmlElement(name = "Erfassergruppe", required = true)
+    protected String erfassergruppe;
+    @XmlElement(name = "Projektleiter", required = true)
+    protected String projektleiter;
+    @XmlElement(name = "Planumsatz", required = true)
+    protected String planumsatz;
+    @XmlElement(name = "Update")
+    protected byte update;
+    @XmlElement(name = "Zuordnungsbereiche", required = true)
+    protected Campain.Zuordnungsbereiche zuordnungsbereiche;
+    @XmlElement(name = "Organisationen", required = true)
+    protected Campain.Organisationen organisationen;
+    @XmlElement(name = "Industrien", required = true)
+    protected Campain.Industrien industrien;
+    @XmlElement(name = "Marken", required = true)
+    protected Campain.Marken marken;
+    @XmlElement(name = "Label", required = true)
+    protected Campain.Label label;
+    @XmlElement(name = "Kundengruppen", required = true)
+    protected Campain.Kundengruppen kundengruppen;
+    @XmlElement(name = "Profilierungssortimente", required = true)
+    protected Campain.Profilierungssortimente profilierungssortimente;
 
     /**
      * Ruft den Wert der id-Eigenschaft ab.
@@ -145,459 +231,35 @@ public class Campain {
     }
 
     /**
-     * Ruft den Wert der profilierungssortiment-Eigenschaft ab.
+     * Ruft den Wert der quellSystem-Eigenschaft ab.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getProfilierungssortiment() {
-        return profilierungssortiment;
+    public byte getQuellSystem() {
+        return quellSystem;
     }
 
     /**
-     * Legt den Wert der profilierungssortiment-Eigenschaft fest.
+     * Legt den Wert der quellSystem-Eigenschaft fest.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setProfilierungssortiment(String value) {
-        this.profilierungssortiment = value;
+    public void setQuellSystem(byte value) {
+        this.quellSystem = value;
     }
 
     /**
-     * Ruft den Wert der kundengruppe-Eigenschaft ab.
+     * Ruft den Wert der transaktionsID-Eigenschaft ab.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getKundengruppe() {
-        return kundengruppe;
+    public byte getTransaktionsID() {
+        return transaktionsID;
     }
 
     /**
-     * Legt den Wert der kundengruppe-Eigenschaft fest.
+     * Legt den Wert der transaktionsID-Eigenschaft fest.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setKundengruppe(String value) {
-        this.kundengruppe = value;
-    }
-
-    /**
-     * Ruft den Wert der label-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLabel() {
-        return label;
-    }
-
-    /**
-     * Legt den Wert der label-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLabel(String value) {
-        this.label = value;
-    }
-
-    /**
-     * Ruft den Wert der marke-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMarke() {
-        return marke;
-    }
-
-    /**
-     * Legt den Wert der marke-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMarke(String value) {
-        this.marke = value;
-    }
-
-    /**
-     * Ruft den Wert der industrie-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getIndustrie() {
-        return industrie;
-    }
-
-    /**
-     * Legt den Wert der industrie-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIndustrie(String value) {
-        this.industrie = value;
-    }
-
-    /**
-     * Ruft den Wert der organisation-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOrganisation() {
-        return organisation;
-    }
-
-    /**
-     * Legt den Wert der organisation-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOrganisation(String value) {
-        this.organisation = value;
-    }
-
-    /**
-     * Ruft den Wert der gm-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGM() {
-        return gm;
-    }
-
-    /**
-     * Legt den Wert der gm-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGM(String value) {
-        this.gm = value;
-    }
-
-    /**
-     * Ruft den Wert der update-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUpdate() {
-        return update;
-    }
-
-    /**
-     * Legt den Wert der update-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUpdate(String value) {
-        this.update = value;
-    }
-
-    /**
-     * Ruft den Wert der planumsatz-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPlanumsatz() {
-        return planumsatz;
-    }
-
-    /**
-     * Legt den Wert der planumsatz-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPlanumsatz(String value) {
-        this.planumsatz = value;
-    }
-
-    /**
-     * Ruft den Wert der projektleiter-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProjektleiter() {
-        return projektleiter;
-    }
-
-    /**
-     * Legt den Wert der projektleiter-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProjektleiter(String value) {
-        this.projektleiter = value;
-    }
-
-    /**
-     * Ruft den Wert der erfassergruppe-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getErfassergruppe() {
-        return erfassergruppe;
-    }
-
-    /**
-     * Legt den Wert der erfassergruppe-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setErfassergruppe(String value) {
-        this.erfassergruppe = value;
-    }
-
-    /**
-     * Ruft den Wert der bezeichnungsprache-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBezeichnungsprache() {
-        return bezeichnungsprache;
-    }
-
-    /**
-     * Legt den Wert der bezeichnungsprache-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBezeichnungsprache(String value) {
-        this.bezeichnungsprache = value;
-    }
-
-    /**
-     * Ruft den Wert der bezeichnung-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBezeichnung() {
-        return bezeichnung;
-    }
-
-    /**
-     * Legt den Wert der bezeichnung-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBezeichnung(String value) {
-        this.bezeichnung = value;
-    }
-
-    /**
-     * Ruft den Wert der kampagnesprache-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getKampagnesprache() {
-        return kampagnesprache;
-    }
-
-    /**
-     * Legt den Wert der kampagnesprache-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setKampagnesprache(String value) {
-        this.kampagnesprache = value;
-    }
-
-    /**
-     * Ruft den Wert der kampagnename-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getKampagnename() {
-        return kampagnename;
-    }
-
-    /**
-     * Legt den Wert der kampagnename-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setKampagnename(String value) {
-        this.kampagnename = value;
-    }
-
-    /**
-     * Ruft den Wert der mabeOnly-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMABEOnly() {
-        return mabeOnly;
-    }
-
-    /**
-     * Legt den Wert der mabeOnly-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMABEOnly(String value) {
-        this.mabeOnly = value;
-    }
-
-    /**
-     * Ruft den Wert der ende-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEnde() {
-        return ende;
-    }
-
-    /**
-     * Legt den Wert der ende-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEnde(String value) {
-        this.ende = value;
-    }
-
-    /**
-     * Ruft den Wert der start-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStart() {
-        return start;
-    }
-
-    /**
-     * Legt den Wert der start-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStart(String value) {
-        this.start = value;
-    }
-
-    /**
-     * Ruft den Wert der kampagnentyp-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getKampagnentyp() {
-        return kampagnentyp;
-    }
-
-    /**
-     * Legt den Wert der kampagnentyp-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setKampagnentyp(String value) {
-        this.kampagnentyp = value;
+    public void setTransaktionsID(byte value) {
+        this.transaktionsID = value;
     }
 
     /**
@@ -625,51 +287,938 @@ public class Campain {
     }
 
     /**
-     * Ruft den Wert der transaktionsID-Eigenschaft ab.
+     * Ruft den Wert der kampagnentyp-Eigenschaft ab.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTransaktionsID() {
-        return transaktionsID;
+    public String getKampagnentyp() {
+        return kampagnentyp;
     }
 
     /**
-     * Legt den Wert der transaktionsID-Eigenschaft fest.
+     * Legt den Wert der kampagnentyp-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTransaktionsID(String value) {
-        this.transaktionsID = value;
+    public void setKampagnentyp(String value) {
+        this.kampagnentyp = value;
     }
 
     /**
-     * Ruft den Wert der quellSystem-Eigenschaft ab.
+     * Ruft den Wert der start-Eigenschaft ab.
+     * 
+     */
+    public int getStart() {
+        return start;
+    }
+
+    /**
+     * Legt den Wert der start-Eigenschaft fest.
+     * 
+     */
+    public void setStart(int value) {
+        this.start = value;
+    }
+
+    /**
+     * Ruft den Wert der ende-Eigenschaft ab.
+     * 
+     */
+    public int getEnde() {
+        return ende;
+    }
+
+    /**
+     * Legt den Wert der ende-Eigenschaft fest.
+     * 
+     */
+    public void setEnde(int value) {
+        this.ende = value;
+    }
+
+    /**
+     * Ruft den Wert der mabeOnly-Eigenschaft ab.
+     * 
+     */
+    public byte getMABEOnly() {
+        return mabeOnly;
+    }
+
+    /**
+     * Legt den Wert der mabeOnly-Eigenschaft fest.
+     * 
+     */
+    public void setMABEOnly(byte value) {
+        this.mabeOnly = value;
+    }
+
+    /**
+     * Ruft den Wert der kampagneName-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.KampagneName }
+     *     
+     */
+    public Campain.KampagneName getKampagneName() {
+        return kampagneName;
+    }
+
+    /**
+     * Legt den Wert der kampagneName-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.KampagneName }
+     *     
+     */
+    public void setKampagneName(Campain.KampagneName value) {
+        this.kampagneName = value;
+    }
+
+    /**
+     * Ruft den Wert der beschreibung-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Beschreibung }
+     *     
+     */
+    public Campain.Beschreibung getBeschreibung() {
+        return beschreibung;
+    }
+
+    /**
+     * Legt den Wert der beschreibung-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Beschreibung }
+     *     
+     */
+    public void setBeschreibung(Campain.Beschreibung value) {
+        this.beschreibung = value;
+    }
+
+    /**
+     * Ruft den Wert der erfassergruppe-Eigenschaft ab.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getQuellSystem() {
-        return quellSystem;
+    public String getErfassergruppe() {
+        return erfassergruppe;
     }
 
     /**
-     * Legt den Wert der quellSystem-Eigenschaft fest.
+     * Legt den Wert der erfassergruppe-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setQuellSystem(String value) {
-        this.quellSystem = value;
+    public void setErfassergruppe(String value) {
+        this.erfassergruppe = value;
+    }
+
+    /**
+     * Ruft den Wert der projektleiter-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getProjektleiter() {
+        return projektleiter;
+    }
+
+    /**
+     * Legt den Wert der projektleiter-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setProjektleiter(String value) {
+        this.projektleiter = value;
+    }
+
+    /**
+     * Ruft den Wert der planumsatz-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPlanumsatz() {
+        return planumsatz;
+    }
+
+    /**
+     * Legt den Wert der planumsatz-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPlanumsatz(String value) {
+        this.planumsatz = value;
+    }
+
+    /**
+     * Ruft den Wert der update-Eigenschaft ab.
+     * 
+     */
+    public byte getUpdate() {
+        return update;
+    }
+
+    /**
+     * Legt den Wert der update-Eigenschaft fest.
+     * 
+     */
+    public void setUpdate(byte value) {
+        this.update = value;
+    }
+
+    /**
+     * Ruft den Wert der zuordnungsbereiche-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Zuordnungsbereiche }
+     *     
+     */
+    public Campain.Zuordnungsbereiche getZuordnungsbereiche() {
+        return zuordnungsbereiche;
+    }
+
+    /**
+     * Legt den Wert der zuordnungsbereiche-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Zuordnungsbereiche }
+     *     
+     */
+    public void setZuordnungsbereiche(Campain.Zuordnungsbereiche value) {
+        this.zuordnungsbereiche = value;
+    }
+
+    /**
+     * Ruft den Wert der organisationen-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Organisationen }
+     *     
+     */
+    public Campain.Organisationen getOrganisationen() {
+        return organisationen;
+    }
+
+    /**
+     * Legt den Wert der organisationen-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Organisationen }
+     *     
+     */
+    public void setOrganisationen(Campain.Organisationen value) {
+        this.organisationen = value;
+    }
+
+    /**
+     * Ruft den Wert der industrien-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Industrien }
+     *     
+     */
+    public Campain.Industrien getIndustrien() {
+        return industrien;
+    }
+
+    /**
+     * Legt den Wert der industrien-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Industrien }
+     *     
+     */
+    public void setIndustrien(Campain.Industrien value) {
+        this.industrien = value;
+    }
+
+    /**
+     * Ruft den Wert der marken-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Marken }
+     *     
+     */
+    public Campain.Marken getMarken() {
+        return marken;
+    }
+
+    /**
+     * Legt den Wert der marken-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Marken }
+     *     
+     */
+    public void setMarken(Campain.Marken value) {
+        this.marken = value;
+    }
+
+    /**
+     * Ruft den Wert der label-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Label }
+     *     
+     */
+    public Campain.Label getLabel() {
+        return label;
+    }
+
+    /**
+     * Legt den Wert der label-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Label }
+     *     
+     */
+    public void setLabel(Campain.Label value) {
+        this.label = value;
+    }
+
+    /**
+     * Ruft den Wert der kundengruppen-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Kundengruppen }
+     *     
+     */
+    public Campain.Kundengruppen getKundengruppen() {
+        return kundengruppen;
+    }
+
+    /**
+     * Legt den Wert der kundengruppen-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Kundengruppen }
+     *     
+     */
+    public void setKundengruppen(Campain.Kundengruppen value) {
+        this.kundengruppen = value;
+    }
+
+    /**
+     * Ruft den Wert der profilierungssortimente-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Campain.Profilierungssortimente }
+     *     
+     */
+    public Campain.Profilierungssortimente getProfilierungssortimente() {
+        return profilierungssortimente;
+    }
+
+    /**
+     * Legt den Wert der profilierungssortimente-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Campain.Profilierungssortimente }
+     *     
+     */
+    public void setProfilierungssortimente(Campain.Profilierungssortimente value) {
+        this.profilierungssortimente = value;
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Bezeichnung" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="Sprache" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "bezeichnung",
+        "sprache"
+    })
+    public static class Beschreibung {
+
+        @XmlElement(name = "Bezeichnung", required = true)
+        protected String bezeichnung;
+        @XmlElement(name = "Sprache", required = true)
+        protected String sprache;
+
+        /**
+         * Ruft den Wert der bezeichnung-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getBezeichnung() {
+            return bezeichnung;
+        }
+
+        /**
+         * Legt den Wert der bezeichnung-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setBezeichnung(String value) {
+            this.bezeichnung = value;
+        }
+
+        /**
+         * Ruft den Wert der sprache-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getSprache() {
+            return sprache;
+        }
+
+        /**
+         * Legt den Wert der sprache-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setSprache(String value) {
+            this.sprache = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Industrie" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "industrie"
+    })
+    public static class Industrien {
+
+        @XmlElement(name = "Industrie", required = true)
+        protected String industrie;
+
+        /**
+         * Ruft den Wert der industrie-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getIndustrie() {
+            return industrie;
+        }
+
+        /**
+         * Legt den Wert der industrie-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setIndustrie(String value) {
+            this.industrie = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Bezeichnung" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="Sprache" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "bezeichnung",
+        "sprache"
+    })
+    public static class KampagneName {
+
+        @XmlElement(name = "Bezeichnung", required = true)
+        protected String bezeichnung;
+        @XmlElement(name = "Sprache", required = true)
+        protected String sprache;
+
+        /**
+         * Ruft den Wert der bezeichnung-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getBezeichnung() {
+            return bezeichnung;
+        }
+
+        /**
+         * Legt den Wert der bezeichnung-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setBezeichnung(String value) {
+            this.bezeichnung = value;
+        }
+
+        /**
+         * Ruft den Wert der sprache-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getSprache() {
+            return sprache;
+        }
+
+        /**
+         * Legt den Wert der sprache-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setSprache(String value) {
+            this.sprache = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Kundengruppe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "kundengruppe"
+    })
+    public static class Kundengruppen {
+
+        @XmlElement(name = "Kundengruppe", required = true)
+        protected String kundengruppe;
+
+        /**
+         * Ruft den Wert der kundengruppe-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getKundengruppe() {
+            return kundengruppe;
+        }
+
+        /**
+         * Legt den Wert der kundengruppe-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setKundengruppe(String value) {
+            this.kundengruppe = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Label" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "label"
+    })
+    public static class Label {
+
+        @XmlElement(name = "Label", required = true)
+        protected String label;
+
+        /**
+         * Ruft den Wert der label-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getLabel() {
+            return label;
+        }
+
+        /**
+         * Legt den Wert der label-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setLabel(String value) {
+            this.label = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Marke" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "marke"
+    })
+    public static class Marken {
+
+        @XmlElement(name = "Marke", required = true)
+        protected String marke;
+
+        /**
+         * Ruft den Wert der marke-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getMarke() {
+            return marke;
+        }
+
+        /**
+         * Legt den Wert der marke-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setMarke(String value) {
+            this.marke = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Organisation" type="{http://www.w3.org/2001/XMLSchema}byte" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "organisation"
+    })
+    public static class Organisationen {
+
+        @XmlElement(name = "Organisation", type = Byte.class)
+        protected List<Byte> organisation;
+
+        /**
+         * Gets the value of the organisation property.
+         * 
+         * <p>This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a {@code set} method for the organisation property.</p>
+         * 
+         * <p>
+         * For example, to add a new item, do as follows:
+         * </p>
+         * <pre>
+         * getOrganisation().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link Byte }
+         * </p>
+         * 
+         * 
+         * @return
+         *     The value of the organisation property.
+         */
+        public List<Byte> getOrganisation() {
+            if (organisation == null) {
+                organisation = new ArrayList<>();
+            }
+            return this.organisation;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Profilierungssortiment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "profilierungssortiment"
+    })
+    public static class Profilierungssortimente {
+
+        @XmlElement(name = "Profilierungssortiment", required = true)
+        protected String profilierungssortiment;
+
+        /**
+         * Ruft den Wert der profilierungssortiment-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getProfilierungssortiment() {
+            return profilierungssortiment;
+        }
+
+        /**
+         * Legt den Wert der profilierungssortiment-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setProfilierungssortiment(String value) {
+            this.profilierungssortiment = value;
+        }
+
+    }
+
+
+    /**
+     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * 
+     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * 
+     * &lt;pre&gt;{&#064;code
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="GM" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * }&lt;/pre&gt;
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "gm"
+    })
+    public static class Zuordnungsbereiche {
+
+        @XmlElement(name = "GM", required = true)
+        protected String gm;
+
+        /**
+         * Ruft den Wert der gm-Eigenschaft ab.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getGM() {
+            return gm;
+        }
+
+        /**
+         * Legt den Wert der gm-Eigenschaft fest.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setGM(String value) {
+            this.gm = value;
+        }
+
     }
 
 }
