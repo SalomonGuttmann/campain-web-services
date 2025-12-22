@@ -36,6 +36,16 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Campain }
+     * 
+     * @return
+     *     the new instance of {@link Campain }
+     */
+    public Campain createCampain() {
+        return new Campain();
+    }
+
+    /**
      * Create an instance of {@link GetCampainRequest }
      * 
      * @return
@@ -56,13 +66,93 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Campain }
+     * Create an instance of {@link Campain.KampagneName }
      * 
      * @return
-     *     the new instance of {@link Campain }
+     *     the new instance of {@link Campain.KampagneName }
      */
-    public Campain createCampain() {
-        return new Campain();
+    public Campain.KampagneName createCampainKampagneName() {
+        return new Campain.KampagneName();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Beschreibung }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Beschreibung }
+     */
+    public Campain.Beschreibung createCampainBeschreibung() {
+        return new Campain.Beschreibung();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Zuordnungsbereiche }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Zuordnungsbereiche }
+     */
+    public Campain.Zuordnungsbereiche createCampainZuordnungsbereiche() {
+        return new Campain.Zuordnungsbereiche();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Organisationen }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Organisationen }
+     */
+    public Campain.Organisationen createCampainOrganisationen() {
+        return new Campain.Organisationen();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Industrien }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Industrien }
+     */
+    public Campain.Industrien createCampainIndustrien() {
+        return new Campain.Industrien();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Marken }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Marken }
+     */
+    public Campain.Marken createCampainMarken() {
+        return new Campain.Marken();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Label }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Label }
+     */
+    public Campain.Label createCampainLabel() {
+        return new Campain.Label();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Kundengruppen }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Kundengruppen }
+     */
+    public Campain.Kundengruppen createCampainKundengruppen() {
+        return new Campain.Kundengruppen();
+    }
+
+    /**
+     * Create an instance of {@link Campain.Profilierungssortimente }
+     * 
+     * @return
+     *     the new instance of {@link Campain.Profilierungssortimente }
+     */
+    public Campain.Profilierungssortimente createCampainProfilierungssortimente() {
+        return new Campain.Profilierungssortimente();
     }
 
 }
