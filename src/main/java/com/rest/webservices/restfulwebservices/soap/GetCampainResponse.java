@@ -16,55 +16,49 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
- * 
+ * <p>
  * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
- * 
+ * <p>
  * &lt;pre&gt;{&#064;code
  * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="campain" type="{https://soap.restfulwebservices.webservices.rest.com}campain"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
+ * &lt;complexContent&gt;
+ * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ * &lt;sequence&gt;
+ * &lt;element name="campain_res" type="{https://soap.restfulwebservices.webservices.rest.com}campain_res"/&gt;
+ * &lt;/sequence&gt;
+ * &lt;/restriction&gt;
+ * &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * }&lt;/pre&gt;
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "campain"
+        "campainRes"
 })
 @XmlRootElement(name = "getCampainResponse")
 public class GetCampainResponse {
 
-    @XmlElement(required = true)
-    protected Campain campain;
+    @XmlElement(name = "campain_res", required = true)
+    protected CampainRes campainRes;
 
     /**
-     * Ruft den Wert der campain-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Campain }
-     *     
+     * Ruft den Wert der campainRes-Eigenschaft ab.
+     *
+     * @return possible object is
+     * {@link CampainRes }
      */
-    public Campain getCampain() {
-        return campain;
+    public CampainRes getCampainRes() {
+        return campainRes;
     }
 
     /**
-     * Legt den Wert der campain-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Campain }
-     *     
+     * Legt den Wert der campainRes-Eigenschaft fest.
+     *
+     * @param value allowed object is
+     *              {@link CampainRes }
      */
-    public void setCampain(Campain value) {
-        this.campain = value;
+    public void setCampainRes(CampainRes value) {
+        this.campainRes = value;
     }
 
 }

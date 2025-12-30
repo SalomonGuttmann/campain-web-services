@@ -5,7 +5,7 @@
 Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.6 generiert 
 Siehe https://eclipse-ee4j.github.io/jaxb-ri 
 Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-Generiert: 2025.12.22 um 10:52:25 AM CET
+Generiert: 2025.12.30 um 03:18:38 PM CET
   -->
   <bindings scd="x-schema::tns" if-exists="true" auto-acknowledge="true" xmlns:tns="https://soap.restfulwebservices.webservices.rest.com">
     <schemaBindings map="false">
@@ -14,11 +14,11 @@ Generiert: 2025.12.22 um 10:52:25 AM CET
     <bindings scd="tns:getCampainRequest" if-exists="true" auto-acknowledge="true">
       <class ref="com.rest.webservices.restfulwebservices.soap.GetCampainRequest"/>
     </bindings>
+    <bindings scd="~tns:campain_res" if-exists="true" auto-acknowledge="true">
+      <class ref="com.rest.webservices.restfulwebservices.soap.CampainRes"/>
+    </bindings>
     <bindings scd="tns:getCampainResponse" if-exists="true" auto-acknowledge="true">
       <class ref="com.rest.webservices.restfulwebservices.soap.GetCampainResponse"/>
-    </bindings>
-    <bindings scd="~tns:campain" if-exists="true" auto-acknowledge="true">
-      <class ref="com.rest.webservices.restfulwebservices.soap.Campain"/>
     </bindings>
   </bindings>
 </bindings>

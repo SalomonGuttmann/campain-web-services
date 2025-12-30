@@ -1,4 +1,3 @@
-
 package com.rest.webservices.restfulwebservices.campain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,25 +5,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-@Entity(name="campain_details")
+@Entity(name = "campain_details")
 public class MTImportCampainReq {
     @Id
     @GeneratedValue
     private Integer id;
     @JsonProperty("QuellSystem")
-    private String quell_system;
+    private Integer quell_system;
     @JsonProperty("TransaktionsID")
-    private String transaktionsID;
+    private Integer transaktionsID;
     @JsonProperty("ExtKampagnenID")
     private String ext_kampagnenid;
     @JsonProperty("Kampagnentyp")
     private String kampagnentyp;
     @JsonProperty("Start")
-    private String start;
+    private Integer start;
     @JsonProperty("Ende")
-    private String ende;
+    private Integer ende;
     @JsonProperty("MABEOnly")
-    private String mABEOnly;
+    private Integer mABEOnly;
     @JsonProperty("KampagneName")
     private String kampagnename;
     @JsonProperty("KampagneSprache")
@@ -38,9 +37,9 @@ public class MTImportCampainReq {
     @JsonProperty("Projektleiter")
     private String projektleiter;
     @JsonProperty("Planumsatz")
-    private String planumsatz;
+    private Integer planumsatz;
     @JsonProperty("Update")
-    private String update;
+    private Integer update;
     @JsonProperty("GM")
     private String gM;
     @JsonProperty("Organisation")
@@ -59,32 +58,6 @@ public class MTImportCampainReq {
     protected MTImportCampainReq() {
     }
 
-    public MTImportCampainReq(Integer id, String profilierungssortiment, String kundengruppe, String label, String marke, String industrie, String organisation, String gM, String update, String planumsatz, String projektleiter, String erfassergruppe, String bezeichnungsprache, String bezeichnung, String kampagnesprache, String kampagnename, String mABEOnly, String ende, String start, String kampagnentyp, String ext_kampagnenid, String transaktionsID, String quell_system) {
-        this.id = id;
-        this.profilierungssortiment = profilierungssortiment;
-        this.kundengruppe = kundengruppe;
-        this.label = label;
-        this.marke = marke;
-        this.industrie = industrie;
-        this.organisation = organisation;
-        this.gM = gM;
-        this.update = update;
-        this.planumsatz = planumsatz;
-        this.projektleiter = projektleiter;
-        this.erfassergruppe = erfassergruppe;
-        this.bezeichnungsprache = bezeichnungsprache;
-        this.bezeichnung = bezeichnung;
-        this.kampagnesprache = kampagnesprache;
-        this.kampagnename = kampagnename;
-        this.mABEOnly = mABEOnly;
-        this.ende = ende;
-        this.start = start;
-        this.kampagnentyp = kampagnentyp;
-        this.ext_kampagnenid = ext_kampagnenid;
-        this.transaktionsID = transaktionsID;
-        this.quell_system = quell_system;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -93,19 +66,19 @@ public class MTImportCampainReq {
         this.id = id;
     }
 
-    public String getQuell_system() {
+    public Integer getQuell_system() {
         return quell_system;
     }
 
-    public void setQuell_system(String quellSystem) {
-        this.quell_system = quellSystem;
+    public void setQuell_system(Integer quell_system) {
+        this.quell_system = quell_system;
     }
 
-    public String getTransaktionsID() {
+    public Integer getTransaktionsID() {
         return transaktionsID;
     }
 
-    public void setTransaktionsID(String transaktionsID) {
+    public void setTransaktionsID(Integer transaktionsID) {
         this.transaktionsID = transaktionsID;
     }
 
@@ -113,8 +86,8 @@ public class MTImportCampainReq {
         return ext_kampagnenid;
     }
 
-    public void setExt_kampagnenid(String extKampagnenID) {
-        this.ext_kampagnenid = extKampagnenID;
+    public void setExt_kampagnenid(String ext_kampagnenid) {
+        this.ext_kampagnenid = ext_kampagnenid;
     }
 
     public String getKampagnentyp() {
@@ -125,27 +98,27 @@ public class MTImportCampainReq {
         this.kampagnentyp = kampagnentyp;
     }
 
-    public String getStart() {
+    public Integer getStart() {
         return start;
     }
 
-    public void setStart(String start) {
+    public void setStart(Integer start) {
         this.start = start;
     }
 
-    public String getEnde() {
+    public Integer getEnde() {
         return ende;
     }
 
-    public void setEnde(String ende) {
+    public void setEnde(Integer ende) {
         this.ende = ende;
     }
 
-    public String getmABEOnly() {
+    public Integer getmABEOnly() {
         return mABEOnly;
     }
 
-    public void setmABEOnly(String mABEOnly) {
+    public void setmABEOnly(Integer mABEOnly) {
         this.mABEOnly = mABEOnly;
     }
 
@@ -177,8 +150,8 @@ public class MTImportCampainReq {
         return bezeichnungsprache;
     }
 
-    public void setBezeichnungsprache(String campainsprache) {
-        this.bezeichnungsprache = campainsprache;
+    public void setBezeichnungsprache(String bezeichnungsprache) {
+        this.bezeichnungsprache = bezeichnungsprache;
     }
 
     public String getErfassergruppe() {
@@ -197,19 +170,19 @@ public class MTImportCampainReq {
         this.projektleiter = projektleiter;
     }
 
-    public String getPlanumsatz() {
+    public Integer getPlanumsatz() {
         return planumsatz;
     }
 
-    public void setPlanumsatz(String planumsatz) {
+    public void setPlanumsatz(Integer planumsatz) {
         this.planumsatz = planumsatz;
     }
 
-    public String getUpdate() {
+    public Integer getUpdate() {
         return update;
     }
 
-    public void setUpdate(String update) {
+    public void setUpdate(Integer update) {
         this.update = update;
     }
 
@@ -266,6 +239,32 @@ public class MTImportCampainReq {
     }
 
     public void setProfilierungssortiment(String profilierungssortiment) {
+        this.profilierungssortiment = profilierungssortiment;
+    }
+
+    public MTImportCampainReq(Integer id, Integer quell_system, Integer transaktionsID, String ext_kampagnenid, String kampagnentyp, Integer start, Integer ende, Integer mABEOnly, String kampagnename, String kampagnesprache, String bezeichnung, String bezeichnungsprache, String erfassergruppe, String projektleiter, Integer planumsatz, Integer update, String gM, String organisation, String industrie, String marke, String label, String kundengruppe, String profilierungssortiment) {
+        this.id = id;
+        this.quell_system = quell_system;
+        this.transaktionsID = transaktionsID;
+        this.ext_kampagnenid = ext_kampagnenid;
+        this.kampagnentyp = kampagnentyp;
+        this.start = start;
+        this.ende = ende;
+        this.mABEOnly = mABEOnly;
+        this.kampagnename = kampagnename;
+        this.kampagnesprache = kampagnesprache;
+        this.bezeichnung = bezeichnung;
+        this.bezeichnungsprache = bezeichnungsprache;
+        this.erfassergruppe = erfassergruppe;
+        this.projektleiter = projektleiter;
+        this.planumsatz = planumsatz;
+        this.update = update;
+        this.gM = gM;
+        this.organisation = organisation;
+        this.industrie = industrie;
+        this.marke = marke;
+        this.label = label;
+        this.kundengruppe = kundengruppe;
         this.profilierungssortiment = profilierungssortiment;
     }
 

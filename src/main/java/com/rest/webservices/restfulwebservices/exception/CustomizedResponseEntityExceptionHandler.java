@@ -16,33 +16,33 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 // RestControllerAdvice
 @ControllerAdvice
-public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler{
+public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-	@ExceptionHandler(Exception.class)
-	public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) throws Exception {
-		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
-				ex.getMessage(), request.getDescription(false));
-		
-		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
-	}
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) throws Exception {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
+                ex.getMessage(), request.getDescription(false));
 
-	@ExceptionHandler(CanpainNotFoundException.class)
-	public final ResponseEntity<ErrorDetails> handleCanpainNotFoundException(Exception ex, WebRequest request) throws Exception {
-		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
-				ex.getMessage(), request.getDescription(false));
-		
-		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
-		
-	}
+        return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
-	@Override
-	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), 
-				"Total Errors:" + ex.getErrorCount() + " First Error:" +
-						ex.getFieldError().getDefaultMessage(),
-				        request.getDescription(false));
+    @ExceptionHandler(CanpainNotFoundException.class)
+    public final ResponseEntity<ErrorDetails> handleCanpainNotFoundException(Exception ex, WebRequest request) throws Exception {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
+                ex.getMessage(), request.getDescription(false));
 
-		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
-	}
+        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
+                "Total Errors:" + ex.getErrorCount() + " First Error:" +
+                        ex.getFieldError().getDefaultMessage(),
+                request.getDescription(false));
+
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+    }
 
 }
