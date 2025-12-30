@@ -15,41 +15,43 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * &lt;p&gt;Java-Klasse für campain_res complex type.&lt;/p&gt;
- * <p>
+ * 
  * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
- * <p>
+ * 
  * &lt;pre&gt;{&#064;code
  * &lt;complexType name="campain_res"&gt;
- * &lt;complexContent&gt;
- * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- * &lt;sequence&gt;
- * &lt;element name="QuellSystem" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- * &lt;element name="TransaktionsID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- * &lt;element name="ExtKampagnenid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- * &lt;element name="Message"&gt;
- * &lt;complexType&gt;
- * &lt;complexContent&gt;
- * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- * &lt;sequence&gt;
- * &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- * &lt;element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- * &lt;/sequence&gt;
- * &lt;/restriction&gt;
- * &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * &lt;/element&gt;
- * &lt;/sequence&gt;
- * &lt;/restriction&gt;
- * &lt;/complexContent&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="QuellSystem" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="TransaktionsID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="ExtKampagnenid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Message"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * }&lt;/pre&gt;
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "campain_res", propOrder = {
-        "quellSystem",
-        "transaktionsID",
-        "extKampagnenid",
-        "message"
+    "quellSystem",
+    "transaktionsID",
+    "extKampagnenid",
+    "message"
 })
 public class CampainRes {
 
@@ -64,6 +66,7 @@ public class CampainRes {
 
     /**
      * Ruft den Wert der quellSystem-Eigenschaft ab.
+     * 
      */
     public int getQuellSystem() {
         return quellSystem;
@@ -71,6 +74,7 @@ public class CampainRes {
 
     /**
      * Legt den Wert der quellSystem-Eigenschaft fest.
+     * 
      */
     public void setQuellSystem(int value) {
         this.quellSystem = value;
@@ -78,6 +82,7 @@ public class CampainRes {
 
     /**
      * Ruft den Wert der transaktionsID-Eigenschaft ab.
+     * 
      */
     public int getTransaktionsID() {
         return transaktionsID;
@@ -85,6 +90,7 @@ public class CampainRes {
 
     /**
      * Legt den Wert der transaktionsID-Eigenschaft fest.
+     * 
      */
     public void setTransaktionsID(int value) {
         this.transaktionsID = value;
@@ -92,9 +98,11 @@ public class CampainRes {
 
     /**
      * Ruft den Wert der extKampagnenid-Eigenschaft ab.
-     *
-     * @return possible object is
-     * {@link String }
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
     public String getExtKampagnenid() {
         return extKampagnenid;
@@ -102,9 +110,11 @@ public class CampainRes {
 
     /**
      * Legt den Wert der extKampagnenid-Eigenschaft fest.
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
     public void setExtKampagnenid(String value) {
         this.extKampagnenid = value;
@@ -112,9 +122,11 @@ public class CampainRes {
 
     /**
      * Ruft den Wert der message-Eigenschaft ab.
-     *
-     * @return possible object is
-     * {@link CampainRes.Message }
+     * 
+     * @return
+     *     possible object is
+     *     {@link CampainRes.Message }
+     *     
      */
     public CampainRes.Message getMessage() {
         return message;
@@ -122,9 +134,11 @@ public class CampainRes {
 
     /**
      * Legt den Wert der message-Eigenschaft fest.
-     *
-     * @param value allowed object is
-     *              {@link CampainRes.Message }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CampainRes.Message }
+     *     
      */
     public void setMessage(CampainRes.Message value) {
         this.message = value;
@@ -133,26 +147,28 @@ public class CampainRes {
 
     /**
      * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
-     * <p>
+     * 
      * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
-     * <p>
+     * 
      * &lt;pre&gt;{&#064;code
      * &lt;complexType&gt;
-     * &lt;complexContent&gt;
-     * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     * &lt;sequence&gt;
-     * &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     * &lt;element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     * &lt;/sequence&gt;
-     * &lt;/restriction&gt;
-     * &lt;/complexContent&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
      * }&lt;/pre&gt;
+     * 
+     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-            "type",
-            "text"
+        "type",
+        "text"
     })
     public static class Message {
 
@@ -163,9 +179,11 @@ public class CampainRes {
 
         /**
          * Ruft den Wert der type-Eigenschaft ab.
-         *
-         * @return possible object is
-         * {@link String }
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
          */
         public String getType() {
             return type;
@@ -173,9 +191,11 @@ public class CampainRes {
 
         /**
          * Legt den Wert der type-Eigenschaft fest.
-         *
-         * @param value allowed object is
-         *              {@link String }
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
          */
         public void setType(String value) {
             this.type = value;
@@ -183,9 +203,11 @@ public class CampainRes {
 
         /**
          * Ruft den Wert der text-Eigenschaft ab.
-         *
-         * @return possible object is
-         * {@link String }
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
          */
         public String getText() {
             return text;
@@ -193,9 +215,11 @@ public class CampainRes {
 
         /**
          * Legt den Wert der text-Eigenschaft fest.
-         *
-         * @param value allowed object is
-         *              {@link String }
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
          */
         public void setText(String value) {
             this.text = value;

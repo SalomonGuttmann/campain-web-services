@@ -16,24 +16,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
- * <p>
+ * 
  * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
- * <p>
+ * 
  * &lt;pre&gt;{&#064;code
  * &lt;complexType&gt;
- * &lt;complexContent&gt;
- * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- * &lt;sequence&gt;
- * &lt;element name="campain_res" type="{https://soap.restfulwebservices.webservices.rest.com}campain_res"/&gt;
- * &lt;/sequence&gt;
- * &lt;/restriction&gt;
- * &lt;/complexContent&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="campain_res" type="{https://soap.restfulwebservices.webservices.rest.com}campain_res"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * }&lt;/pre&gt;
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "campainRes"
+    "campainRes"
 })
 @XmlRootElement(name = "getCampainResponse")
 public class GetCampainResponse {
@@ -43,9 +45,11 @@ public class GetCampainResponse {
 
     /**
      * Ruft den Wert der campainRes-Eigenschaft ab.
-     *
-     * @return possible object is
-     * {@link CampainRes }
+     * 
+     * @return
+     *     possible object is
+     *     {@link CampainRes }
+     *     
      */
     public CampainRes getCampainRes() {
         return campainRes;
@@ -53,9 +57,11 @@ public class GetCampainResponse {
 
     /**
      * Legt den Wert der campainRes-Eigenschaft fest.
-     *
-     * @param value allowed object is
-     *              {@link CampainRes }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CampainRes }
+     *     
      */
     public void setCampainRes(CampainRes value) {
         this.campainRes = value;

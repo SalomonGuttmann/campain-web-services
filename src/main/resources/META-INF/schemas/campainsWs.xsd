@@ -87,8 +87,7 @@
     <xs:element name="getCampainResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="campain" type="tns:campain_res"/>
-                <!--<xs:element name="campain_res" type="tns:campain_res"/>-->
+                <xs:element name="campain_res" type="tns:campain_res"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
