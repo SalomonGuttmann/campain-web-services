@@ -1,5 +1,5 @@
 //
-// Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.6 generiert 
+// Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.4 generiert 
 // Siehe https://eclipse-ee4j.github.io/jaxb-ri 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
 //
@@ -15,21 +15,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+ * <p>Java-Klasse für anonymous complex type.</p>
  * 
- * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.</p>
  * 
- * &lt;pre&gt;{&#064;code
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="campain_res" type="{https://soap.restfulwebservices.webservices.rest.com}campain_res"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * }&lt;/pre&gt;
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="campain_res" type="{https://soap.restfulwebservices.webservices.rest.com}campain_res"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

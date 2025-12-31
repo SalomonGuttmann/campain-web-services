@@ -1,5 +1,5 @@
 //
-// Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.6 generiert 
+// Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.4 generiert 
 // Siehe https://eclipse-ee4j.github.io/jaxb-ri 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
 //
@@ -14,35 +14,35 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Java-Klasse für campain_res complex type.&lt;/p&gt;
+ * <p>Java-Klasse für campain_res complex type.</p>
  * 
- * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.</p>
  * 
- * &lt;pre&gt;{&#064;code
- * &lt;complexType name="campain_res"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="QuellSystem" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="TransaktionsID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="ExtKampagnenid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Message"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * }&lt;/pre&gt;
+ * <pre>{@code
+ * <complexType name="campain_res">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="QuellSystem" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="TransaktionsID" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="ExtKampagnenid" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="Message">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   <element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -146,22 +146,22 @@ public class CampainRes {
 
 
     /**
-     * &lt;p&gt;Java-Klasse für anonymous complex type.&lt;/p&gt;
+     * <p>Java-Klasse für anonymous complex type.</p>
      * 
-     * &lt;p&gt;Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.&lt;/p&gt;
+     * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.</p>
      * 
-     * &lt;pre&gt;{&#064;code
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * }&lt;/pre&gt;
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         <element name="Text" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */

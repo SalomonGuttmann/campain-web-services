@@ -28,7 +28,7 @@ public class CampainEndpoint {
 
         campain_1.setQuellSystem(2);
         campain_1.setTransaktionsID(001);
-        campain_1.setExtKampagnenid("KAMP_40355");
+        campain_1.setExtKampagnenid("KAMP_40372");
 
         CampainRes.Message campain_1_message = new CampainRes.Message();
 

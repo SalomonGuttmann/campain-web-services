@@ -1,5 +1,5 @@
 //
-// Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.6 generiert 
+// Diese Datei wurde mit der Eclipse Implementation of JAXB, v4.0.4 generiert 
 // Siehe https://eclipse-ee4j.github.io/jaxb-ri 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
 //

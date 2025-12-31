@@ -4,17 +4,19 @@ import com.rest.webservices.restfulwebservices.jpa.CampainRepository;
 import com.rest.webservices.restfulwebservices.writexmlrq.GetCampaignSoapRequestBuilder;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
@@ -72,39 +74,36 @@ public class CampainJpaResource {
                 .buildAndExpand(savedCampain.getId())
                 .toUri();
 
-        stringToDom(getCampaignSoapRequestBuilder.generateXml(mtImportCampainReq));
+        // Generate the SOAP request payload
+        String xmlPayload = getCampaignSoapRequestBuilder.generateXml(mtImportCampainReq);
 
-        /**CURL vorbereiten und starten um SOAP REQ/RES an M-PROMO zu simulieren*/
+        // Speichern der Datei (falls für Debugging noch benötigt)
+        saveXmlToFile(xmlPayload);
+
+        /** SOAP REQ/RES an M-PROMO simulieren mittels RestTemplate statt CURL */
         try {
-            String command =
-                    "curl --header \"Content-Type: text/xml\" -d @request.xml http://localhost:8080/services";
+            RestTemplate restTemplate = new RestTemplate();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.TEXT_XML);
 
-            ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
-            processBuilder.directory(new File("testSOAP/"));
+            HttpEntity<String> request = new HttpEntity<>(xmlPayload, headers);
 
-            Process process = processBuilder.start();
+            // Sende den SOAP Request an den lokalen Endpoint
+            String response = restTemplate.postForObject("http://localhost:8080/services", request, String.class);
 
-            InputStream inputStream = process.getInputStream();
-
-            for (int i = 0; i < inputStream.available(); i++) {
-                System.out.println("" + inputStream.read());
-            }
-
-            Thread.sleep(10000);
-            process.destroy();
+            System.out.println("SOAP Response erhalten: " + response);
 
         } catch (Exception ex) {
+            System.err.println("Fehler beim Senden des SOAP Requests: " + ex.getMessage());
             ex.printStackTrace();
         }
-
-        /***********************CURL ende********************************************************/
 
         return ResponseEntity.created(location).build();
     }
 
-    public static void stringToDom(String xmlSource)
+    public static void saveXmlToFile(String xmlSource)
             throws IOException {
-        java.io.FileWriter fw = new java.io.FileWriter("testSOAP/request.xml");
+        java.io.FileWriter fw = new java.io.FileWriter("MPromoREQ/request.xml");
         fw.write(xmlSource);
         fw.close();
     }
