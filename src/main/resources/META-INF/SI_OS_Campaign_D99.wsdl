@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SI_OS_Campaign" targetNamespace="http://sas.com/customerintelligence"
+                  xmlns:p1="http://sas.com/customerintelligence"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation/>
+    <wsp:UsingPolicy wsdl:required="true"/>
+    <wsp:Policy wsu:Id="OP_SI_OS_Campaign"/>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://sas.com/customerintelligence" xmlns="http://sas.com/customerintelligence"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="MT_ImportCampaign_Res" type="DT_ImportCampaign_Res"/>
+            <xsd:element name="MT_ImportCampaign_Req" type="DT_ImportCampaign_Req"/>
+            <xsd:complexType name="DT_ImportCampaign_Res">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">894269cc785111e886960000002b0bba</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="QuellSystem">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">c0eaa96e05e511e4c51b0024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="2"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="TransaktionsID">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">39bf1dbffd1111e384870024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="32"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="ExtKampagnenID">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2d716ceafd0611e39bc40024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="30"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="KampagnenID" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">39bf544bfd1111e387f50024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="10"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Message">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">39bf544efd1111e391a50024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Type">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            39bf544cfd1111e3816c0024d7177df5
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="Text" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            39bf544dfd1111e3ae570024d7177df5
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="250"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_Bezeichnung">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">349be67a785111e886d70000002b0bba</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="Bezeichnung">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d9ef5b6ebc8b11e2abfa0024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="250"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Sprache">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d9ef5b6fbc8b11e298d40024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="1"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_ImportCampaign_Req">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">20bb6bcb785111e8994e0000002b0bba</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="QuellSystem">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">17197546fd1211e3b7e20024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="2"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="TransaktionsID">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">ae58a00cfd1011e3b1290024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="32"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="ExtKampagnenID">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">5ca8ea8afc4911e3a3510024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="30"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Kampagnentyp">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b46ceffd0411e3ac1d0024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="3"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Start">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b46cf0fd0411e3b71e0024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="8"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Ende">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b46cf1fd0411e38fbb0024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="8"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="MABEOnly" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0a67d3c2ac711e5c5f910604b69e27a
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="1"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="KampagneName" type="DT_Bezeichnung" maxOccurs="unbounded">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2716daacfd0411e39f490024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="Beschreibung" type="DT_Bezeichnung" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2716daadfd0411e3b8350024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="Erfassergruppe">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b496dafd0411e3c6090024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="10"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Projektleiter">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b496dbfd0411e38d390024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="60"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Planumsatz" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b496dcfd0411e3ae550024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="24"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Update">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">13b496ddfd0411e3ac2e0024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="1"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Zuordnungsbereiche">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2716daaefd0411e3a5e90024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="GM" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            13b496defd0411e3a1940024d7177df5
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="10"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Organisationen">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">271711effd0411e3a0560024d7177df5
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Organisation" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            13b496dffd0411e3a0ed0024d7177df5
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Industrien" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">593d40fb2ac811e5aa3310604b69e27a
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Industrie" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            593d40fa2ac811e5c40710604b69e27a
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="10"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Marken" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">593d89512ac811e5b26810604b69e27a
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Marke" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            593d40fc2ac811e5c8cb10604b69e27a
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="3"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Label" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">593d89532ac811e5cd6b10604b69e27a
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Label" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            593d89522ac811e5cfd910604b69e27a
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="3"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Kundengruppen" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">805435a82ac811e5b7d910604b69e27a
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Kundengruppe" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            805435a72ac811e58e2410604b69e27a
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Profilierungssortimente" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">d61105812ac811e5b92010604b69e27a
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Profilierungssortiment" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            d61105802ac811e5a6b510604b69e27a
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="MT_ImportCampaign_Req">
+        <wsdl:documentation/>
+        <wsdl:part name="MT_ImportCampaign_Req" element="p1:MT_ImportCampaign_Req"/>
+    </wsdl:message>
+    <wsdl:message name="MT_ImportCampaign_Res">
+        <wsdl:documentation/>
+        <wsdl:part name="MT_ImportCampaign_Res" element="p1:MT_ImportCampaign_Res"/>
+    </wsdl:message>
+    <wsdl:portType name="SI_OS_Campaign">
+        <wsdl:documentation/>
+        <wsdl:operation name="SI_OS_Campaign">
+            <wsdl:documentation/>
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP_SI_OS_Campaign"/>
+            </wsp:Policy>
+            <wsdl:input message="p1:MT_ImportCampaign_Req"/>
+            <wsdl:output message="p1:MT_ImportCampaign_Res"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SI_OS_CampaignBinding" type="p1:SI_OS_Campaign">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+                      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        <wsdl:operation name="SI_OS_Campaign">
+            <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+                            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            <wsdl:input>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SI_OS_CampaignService">
+        <wsdl:port name="SI_OS_CampaignPort" binding="p1:SI_OS_CampaignBinding">
+            <soap:address
+                    location="https://d99.mangos.ch:1490/XISOAPAdapter/MessageServlet?channel=:BS_MARKOM_KMS_D:CC_S_AE99_SOAP_Camp&amp;version=3.0&amp;Sender.Service=BS_MARKOM_KMS_D&amp;Interface=http%3A%2F%2Fsas.com%2Fcustomerintelligence%5ESI_OS_Campaign"
+                    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

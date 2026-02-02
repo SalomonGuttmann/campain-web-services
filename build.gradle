@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '4.0.1'
+	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -19,64 +19,99 @@ repositories {
 }
 
 configurations {
-	jaxb
+	jaxws
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'tools.jackson.dataformat:jackson-dataformat-xml'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.postgresql:postgresql'
-	implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
-    implementation 'org.glassfish.jaxb:jaxb-runtime'
-    implementation 'org.springframework.ws:spring-ws-core:5.0.0'
-    implementation 'wsdl4j:wsdl4j:1.6.3'
+	implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
 
-	jaxb "org.glassfish.jaxb:jaxb-xjc:4.0.4"
-	jaxb "org.glassfish.jaxb:jaxb-runtime:4.0.4"
+	implementation "jakarta.jws:jakarta.jws-api:3.0.0"
+	implementation "jakarta.xml.bind:jakarta.xml.bind-api:4.0.0"
+	implementation "org.apache.cxf:cxf-rt-frontend-jaxws:4.0.4"
+	implementation "org.apache.cxf:cxf-rt-transports-http:4.0.4"
+
+	runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:4.0.2'
+	implementation 'org.glassfish.jaxb:jaxb-runtime'
+	implementation 'org.springframework.ws:spring-ws-core:5.0.0'
+	implementation 'wsdl4j:wsdl4j:1.6.3'
+
+	//jaxws
+	// Apache CXF 4.x (Jakarta / JAXB 4)
+	jaxws "org.apache.cxf:cxf-tools-wsdlto-frontend-jaxws:4.0.4"
+	jaxws "org.apache.cxf:cxf-tools-wsdlto-databinding-jaxb:4.0.4"
+	jaxws "org.apache.cxf:cxf-tools-common:4.0.4"
+
+	// JAXB 4.0 (Jakarta)
+	jaxws "org.glassfish.jaxb:jaxb-xjc:4.0.4"
+	jaxws "org.glassfish.jaxb:jaxb-runtime:4.0.4"
+
+	jaxws "org.slf4j:slf4j-simple:2.0.13"
+
 
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-hateoas-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-validation-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.h2database:h2'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 
-tasks.register('xjc') {
-	description = 'Generiert Java-Klassen aus XSD'
-	group = 'build'
+tasks.register('generateWsdlStubs', JavaExec)  {
+	group = "wsdl"
+	description = "Generate Java stubs from SI_OS_Campain.wsdl"
 
-	def xsdFile = file("src/main/resources/META-INF/schemas/campainsWs.xsd")
-	def outputDir = file("src/main/java")
+	classpath = configurations.jaxws
+	mainClass.set("org.apache.cxf.tools.wsdlto.WSDLToJava")
 
-	inputs.file(xsdFile)
-	outputs.dir(outputDir)
+	def wsdlFile = file("src/main/resources/META-INF/SI_OS_Campaign_D99.wsdl")
+	def outputDir = file("build/generated-sources/wsdl")
 
-	doLast {
-		ant.taskdef(
-				name: 'xjc',
-				classname: 'com.sun.tools.xjc.XJCTask',
-				classpath: configurations.jaxb.asPath
-		)
+	args = [
+			"-d", outputDir.absolutePath,
+			"-p", "com.rest.webservices.restfulwebservices.wsdl",
+			"-client",
+			"-verbose",
+			wsdlFile.absolutePath
+	]
 
-		ant.xjc(
-				destdir: outputDir,
-				schema: xsdFile,
-				package: "com.rest.webservices.restfulwebservices.soap",
-				extension: true
-		)
+	doFirst {
+		outputDir.mkdirs()
 	}
 }
 
-compileJava.dependsOn tasks.xjc
+sourceSets {
+	main {
+		java {
+			srcDir "build/generated-sources/wsdl"
+		}
+	}
+}
+
+tasks.register('copyWsdlStubsToSrc', Copy) {
+	group = "wsdl"
+	description = "Copy generated WSDL stubs to src/main/java"
+
+	from("build//generated-sources/wsdl") {
+		exclude '**/*.class'
+	}
+	into("src/main/java")
+
+	dependsOn generateWsdlStubs
+}
+
+tasks.register('cleanWsdlStubsClasses', Delete) {
+	group = "wsdl"
+	description = "Delete generated WSDL stubs from build/generated-sources/wsdl"
+	delete fileTree("build/generated-sources/wsdl") {
+	}
+}
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
-
-
