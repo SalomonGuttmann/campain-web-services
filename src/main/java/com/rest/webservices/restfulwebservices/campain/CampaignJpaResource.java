@@ -103,7 +103,8 @@ public class CampaignJpaResource {
                 .buildAndExpand(savedCampain.getId())
                 .toUri();
 
-        /* SOAP REQ/RES an M-PROMO
+        /* SOAP REQ/RES an M-PROMO, für sicherheit ausgeschaltet*/
+        /*
         try {
                 dTImportCampaignRes = siOSCampaignClient.sendSIOSCampaignReq(mtImportCampainReq);
 
