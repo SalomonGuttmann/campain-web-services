@@ -1,6 +1,9 @@
 package com.rest.webservices.restfulwebservices.kafka;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.Instant;
 
@@ -19,8 +22,9 @@ public class PromotionFullEventEntity {
     private Integer kafkaPartition;
     private Long kafkaOffset;
 
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb", nullable = false)
-    private String payload;
+    private JsonNode payload;
 
     private Instant receivedAt;
 
@@ -66,11 +70,11 @@ public class PromotionFullEventEntity {
         this.kafkaOffset = kafkaOffset;
     }
 
-    public String getPayload() {
+    public JsonNode getPayload() {
         return payload;
     }
 
-    public void setPayload(String payload) {
+    public void setPayload(JsonNode payload) {
         this.payload = payload;
     }
 

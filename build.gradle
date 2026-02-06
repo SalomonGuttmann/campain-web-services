@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'maven-publish' //
 }
 
 group = 'com.rest.webservices'
@@ -15,6 +16,7 @@ java {
 }
 
 repositories {
+	mavenLocal() //
 	mavenCentral()
 }
 
@@ -30,17 +32,14 @@ dependencies {
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.postgresql:postgresql'
-	implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
-	implementation 'org.springframework.boot:spring-boot-starter-kafka'
-
 	implementation "jakarta.jws:jakarta.jws-api:3.0.0"
 	implementation "jakarta.xml.bind:jakarta.xml.bind-api:4.0.0"
 	implementation "org.apache.cxf:cxf-rt-frontend-jaxws:4.0.4"
 	implementation "org.apache.cxf:cxf-rt-transports-http:4.0.4"
 
-	runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:4.0.2'
-	implementation 'org.glassfish.jaxb:jaxb-runtime'
-	implementation 'org.springframework.ws:spring-ws-core:5.0.0'
+	implementation 'org.springframework.kafka:spring-kafka' //
+
+	implementation 'org.springframework.ws:spring-ws-core'
 	implementation 'wsdl4j:wsdl4j:1.6.3'
 
 	//jaxws
@@ -59,10 +58,17 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'com.h2database:h2'
-	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+//
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from(components.java)
+		}
+	}
+}
 
 tasks.register('generateWsdlStubs', JavaExec)  {
 	group = "wsdl"

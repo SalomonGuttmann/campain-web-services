@@ -4,4 +4,5 @@ import com.rest.webservices.restfulwebservices.campain.InMPromoAngelegteKampagne
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InMPromoCampainRepositoryExp extends JpaRepository<InMPromoAngelegteKampagnen, Long>  {
+
 }

@@ -6,3 +6,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PromotionFullEventRepository
         extends JpaRepository<PromotionFullEventEntity, Long> {
 }
+
